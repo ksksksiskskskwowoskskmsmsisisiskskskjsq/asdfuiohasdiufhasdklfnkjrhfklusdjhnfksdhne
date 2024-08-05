@@ -35,6 +35,8 @@ p{
 }
 
 .container {
+   display: flex;
+   flex-direction: column;
    z-index: 1;
    position: fixed;
    justify-content: center;
@@ -63,6 +65,7 @@ p{
 
 h1 img {
     margin-right: 15px;
+    margin-top: auto;
 }
 img {
     margin: auto;
@@ -89,4 +92,15 @@ hr {
     background-color: black;
     filter: blur(150px);
     z-index: -1488;
+}
+
+.hello {
+    display: flex;
+    margin: auto;
+}
+.hello h1 {
+    margin-right: 5px
+}
+.hello img {
+    margin-right: 10px
 }
