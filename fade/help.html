@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FadeProxy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 5px 0;
+            background: #35424a;
+            color: #ffffff;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>/airjump</h2>
+            <p>This feature allows you to jump in the air, which the vanilla game doesn't allow you to do<br/>Example: /airjump 1.5</p>
+            <p><strong>Usage: </strong>/airjump <span style="color: gray">[on:off:reset:boost]</span></p>
+        </section>
+        <section>
+            <h2>/alwayscrit</h2>
+            <p>This function creates critical hit particles even if it is not a critical hit<br/>Please note that this is only a visual effect and does not affect others, so that function is only visible for you</p>
+            <p><strong>Usage: </strong>/alwayscrit <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/cancelforms</h2>
+            <p>This feature allows you to reject forms that the server submits</p>
+            <p><strong>Usage: </strong>/cancelforms <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/fog</h2>
+            <p>This feature allows you to change the fog in the game<br/>Please note that it cannot be completely customized<br/>Example: /fog darkred</p>
+            <p><strong>Usage: </strong>/fog <span style="color: gray">[on:off:reset:1:darkviolet:2:black:3:darkred:4:lightvioletblue]</span></p>
+        </section>
+        <section>
+            <h2>/chunk</h2>
+            <p>This function allows you to change the radius of loading chunks in the game<br/>Example: /chunk 2</p>
+            <p><strong>Usage: </strong>/chunk <span style="color: gray">[on:off:reset:number_of_chunks]</span></p>
+        </section>
+        <section>
+            <h2>/crash</h2>
+            <p>This feature allows you to kick a client directly in the game</p>
+            <p><strong>Usage: </strong>/crash <span style="color: gray">(no arguments)</span></p>
+        </section>
+        <section>
+            <h2>/fakeinput</h2>
+            <p>This function allows you to fake the input mode, for example, on a gamepad<br/>Example: /fakeinput motion</p>
+            <p><strong>Usage: </strong>/fakeinput <span style="color: gray">[on:off:reset:kbm:touch:gamepad:motion:unknown]</span></p>
+        </section>
+        <section>
+            <h2>/fakeos</h2>
+            <p>This function allows you to fake the OS, for example, on a Android<br/>Please note that you must to rejoin for applying changes<br/>Example: /fakeos dedicated</p>
+            <p><strong>Usage: </strong>/fakeos <span style="color: gray">[android:ios:mac:fireos:vr:hololens:win10:win32:dedicated:tvos:playstation:nintendo:xbox:winphone:linux:unknown]</span></p>
+        </section>
+        <section>
+            <h2>/fastbreak</h2>
+            <p>This feature gives you a boost effect that allows you to break blocks faster than normal</p>
+            <p><strong>Usage: </strong>/fastbreak <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/fastswim</h2>
+            <p>This feature allows you to swim faster than usual and also control your swimming speed<br/>Example: /fastswim 2.5</p>
+            <p><strong>Usage: </strong>/fastswim <span style="color: gray">[on:off:reset:speed]</span></p>
+        </section>
+        <section>
+            <h2>/fly</h2>
+            <p>This feature allows you to fly without server permission<br/>Example: /fly 2.5</p>
+            <p><strong>Usage: </strong>/fly <span style="color: gray">[on:off:reset:speed]</p><br/>
+        </section>
+        <section>
+            <h2>/friends</h2>
+            <p>This feature allows you to add people who will be ignored when using killaura, tpaura, etc.<br/>All your friends will be saved in the config, this means that even after restarting the application they will remain, ofc unless you delete the config itself<br/>Example: /friends add ivan kot || /friends remove all</p>
+            <p><strong>Usage: </strong>/friends <span style="color: gray">[add:+:remove:-:remove all:- all:list]</p><br/>
+        </section>
+        <section>
+            <h2>/fullbright</h2>
+            <p>This function gives you effect that allows you to see at night</p>
+            <p><strong>Usage: </strong>/fullbright <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/gamemode</h2>
+            <p>This feature gives you a visual gamemode change<br/>Please note that you can't take items from creative menu<br/>Example: /gamemode sp</p>
+            <p><strong>Usage: </strong>/gamemode <span style="color: gray">[on:off:0:s:survival:1:c:creative:2:a:adventure:3:6:sp:spectator]</span></p>
+        </section>
+        <section>
+            <h2>/guimanage</h2>
+            <p>This feature allows you to hide or show hud elements<br/>Example: /guimanage hide crosshair</p>
+            <p><strong>Usage: </strong>/guimanage <span style="color: gray">[on:off:reset [element|all]:hide [element|all]]</span></p>
+            <p><strong>Elements: </strong>paperdoll, armour, tooltips, touch, crosshair, hotbar, hp, xp, hunger, airsupply, riderhp</p>
+        </section>
+        <section>
+            <h2>/hitbox</h2>
+            <p>This feature allows you to change the hitboxes of all players on the server (including npcs)<br/>Example: /hitbox ver 3.5</p>
+            <p><strong>Usage: </strong>/hitbox <span style="color: gray">[on:off:reset:default:w:width:hor:horizontal (value):h:height:ver:vertical (value)]</span></p>
+        </section>
+        <section>
+            <h2>/jetpack</h2>
+            <p>This feature allows you to fly in the direction you are looking, allowing you to adjust your flight speed<br/>Example: /jetpack 2</p>
+            <p><strong>Usage: </strong>/jetpack <span style="color: gray">[on:off:reset:speed]</span></p>
+        </section>
+        <section>
+            <h2>/keystrokes</h2>
+            <p>This function shows you when you press W, A, S, D or Space</p>
+            <p><strong>Usage: </strong>/keystrokes <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/killaura</h2>
+            <p>This feature allows you to hit all players who are nearby, also allowing you to adjust attack radius and speed (CPS)<br/>Example: /killaura range 7</p>
+            <p><strong>Usage: </strong>/killaura <span style="color: gray">[on:off:cps:speed:s (speed):reach:distance:range (distance)]</span></p>
+        </section>
+        <section>
+            <h2>/logs</h2>
+            <p>This function allows you to toggle proxy logs</p>
+            <p><strong>Usage: </strong>/logs <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/noclip</h2>
+            <p>This feature allows you to walk through blocks, which vanilla does not allow in survival gamemode</p>
+            <p><strong>Usage: </strong>/noclip <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/reach</h2>
+            <p>This function allows you to adjust your attack radius<br/>Please note that this function is fully working by math and it can be incorrect sometimes<br/>Example: /reach 3.5</p>
+            <p><strong>Usage: </strong>/reach <span style="color: gray">[on:off:reset:range]</span></p>
+        </section>
+        <section>
+            <h2>/time</h2>
+            <p>This function allows you to adjust ingame time (visually ofc)</br>Example: /time 4000</p>
+            <p><strong>Usage: </strong>/time <span style="color: gray">[on:off:day:d:night:n:time]</span></p>
+        </section>
+        <section>
+            <h2>/showinvisible</h2>
+            <p>This function allows you to see all players that have invisible flag in their data</p>
+            <p><strong>Usage: </strong>/showinvisible <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/spam</h2>
+            <p>This function allows you to quickly send messages, allowing to adjust speed messages per second<br/>Example: /spam msg hello world</p>
+            <p><strong>Usage: </strong>/spam <span style="color: gray">[on:off:msg:message:m (message):speed:mps:s (speed)]</span></p>
+        </section>
+        <section>
+            <h2>/speed</h2>
+            <p>This function allows you to adjust your speed<br/>Example: /speed 1.5</p>
+            <p><strong>Usage: </strong>/speed <span style="color: gray">[on:off:reset:speed]</span></p>
+        </section>
+        <section>
+            <h2>/taptp</h2>
+            <p>This function allows you to teleport to the block that you clicked, allowing to change the teleportation mode<br/>Example: /taptp mode clean</p>
+            <p><strong>Usage: </strong>/taptp <span style="color: gray">[on:off:mode [1:2|default:clean]]</span></p>
+        </section>
+        <section>
+            <h2>/timer</h2>
+            <p>This function allows you to adjust ingame speed<br/>Example: /timer 1500</p>
+            <p><strong>Usage: </strong>/timer <span style="color: gray">[on:off:reset:value]</span></p>
+        </section>
+        <section>
+            <h2>/tpaura</h2>
+            <p>This function will automatically attack the player, while teleporting you in a circle, where the center is the player's position, also allowing you to adjust attack range and speed</p>
+            <p><strong>Usage: </strong>/fullbright <span style="color: gray">(toggle)</span></p>
+        </section>
+        <section>
+            <h2>/triggerbot</h2>
+            <p>This feature will allow you to attack the player your crosshair is aimed at, allowing to adjust attack speed<br/>Please note that this function dont looking at your reach value<br/>Example: /triggerbot cps 17</p>
+            <p><strong>Usage: </strong>/triggerbot <span style="color: gray">[on:off:reset:cps (value)]</span></p>
+        </section>
+        <section>
+            <h2>/velocity</h2>
+            <p>This function allows you to adjust your horizontal and vertical knockback, using percentages<br/>Example: /velocity w 100 (Horizontal velocity will be for 100% lower than usual)</p>
+            <p><strong>Usage: </strong>/velocity <span style="color: gray">[on:off:reset:default:w:width:hor:horizontal (value):h:ver:vertical (value)]</span></p>
+        </section>
+        <section>
+            <h2>/waypoint</h2>
+            <p>This function allows you to make a tower of particles, that you can see from long distance<br/>Example: /waypoint set</p>
+            <p><strong>Usage: </strong>/waypoint <span style="color: gray">[on:off:reset:set]</span></p>
+        </section>
+        <section style="opacity: 0"></section>
+    </main>
+    <footer style="position: fixed; bottom: 0;">
+        <p>&copy; Small Penis Corparation 2024. All rights reversed</p>
+    </footer>
+</body>
+</html>
